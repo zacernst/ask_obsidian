@@ -84,3 +84,8 @@ if __name__ == "__main__":
         "Give me a couple of very brief hints for how I might use Obsidian for scheduling."
     )
     print(answer)
+
+    # Output:
+    # 1. Enable the Daily Notes Core plugin in Obsidian to create or open daily notes.
+    # 2. Install and enable the Day Planner Community plugin to set up time blocking schedules within your daily notes.
+
