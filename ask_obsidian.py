@@ -4,29 +4,9 @@ import chromadb
 import hashlib
 from rich.progress import Progress, SpinnerColumn, MofNCompleteColumn
 import uuid
-from typing import List, Dict, Optional
+from typing import Optional
 
-import langchain
-from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
-from langchain.tools import BaseTool
-from langchain_core.output_parsers.base import BaseOutputParser
-from langchain.globals import set_verbose
-
-class DocumentContext(BaseTool):
-    name = "document_context"
-    description = "Extracts the context"
-
-    def _run(
-        self,
-        documents: Optional[List[str]] = None,
-    ) -> Dict:
-
-        context = ["You are a helpful assistant. You know the following:"] + documents
-        return {"context": context}
-    
-    def _arun(self, *args, **kwargs):  # typing:ignore
-        raise NotImplementedError()
 
 
 class QASession:
