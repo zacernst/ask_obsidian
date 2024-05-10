@@ -10,8 +10,6 @@ import chromadb
 from langchain_openai import ChatOpenAI
 import markdown
 import rich
-from rich.console import Console
-from rich.markdown import Markdown
 from rich.progress import Progress, SpinnerColumn, MofNCompleteColumn
 
 # To suppress some warnings that are annoying
