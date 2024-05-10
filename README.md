@@ -33,3 +33,4 @@ For help:
 ```
 ask_obsidian --help
 ```
+![Example of working with the script](ask.gif) 
