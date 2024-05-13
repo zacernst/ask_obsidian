@@ -19,6 +19,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 class QASession:
     """
     A class to represent a Q&A session with an Obsidian vault.
+    This is testing my git setup...
     """
     def __init__(self, vault_path: str, collection_name: Optional[str] = None):
         self.collection_name = collection_name or uuid.uuid4().hex
