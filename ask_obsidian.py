@@ -21,6 +21,7 @@ class QASession:
     A class to represent a Q&A session with an Obsidian vault.
     This is testing my git setup...
     """
+
     def __init__(self, vault_path: str, collection_name: Optional[str] = None):
         self.collection_name = collection_name or uuid.uuid4().hex
         self.vault_path = vault_path
@@ -52,14 +53,15 @@ class QASession:
         """
         Yield the contents of the Markdown files in the vault.
         """
+
         def _convert(text: str) -> str:
-            '''
+            """
             Convert from Markdown to HTML, and then to text.
-            '''
+            """
             md = markdown.Markdown()
             result = BeautifulSoup(md.convert(text), features="html.parser").get_text()
             return result
-        
+
         for markdown_path in self.markdown_paths(progress_message=progress_message):
             with open(markdown_path, "r") as f:
                 text = f.read()
@@ -120,9 +122,9 @@ class QASession:
     "--question", prompt="Question", help="Question to ask the Obsidian vault"
 )
 def main(vault_path: str, question: str) -> None:
-    '''
+    """
     Ask a question to an Obsidian vault. Pretty-print the answer.
-    '''
+    """
     session = QASession(vault_path)
     answer = session.ask(question)
     rich.print(answer)
